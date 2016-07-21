@@ -92,7 +92,6 @@ module.exports = function(app, passport) {
                     if(err2)
                         next(err2);
                     else {
-                        console.log(clases);
                         res.render('classList.ejs', {
                             user : req.user,
                             clases: clases,
@@ -112,9 +111,16 @@ module.exports = function(app, passport) {
                 next(err);
             }
             else {
-                res.render('healerList.ejs', {
-                    user : req.user,
-                    healers : healers
+                Category.find({}, function(err2, categories) {
+                    if(err2)
+                        next(err2);
+                    else {
+                        res.render('healerList.ejs', {
+                            user : req.user,
+                            healers : healers,
+                            categories: categories
+                        });
+                    }
                 });
             }
         });
@@ -127,9 +133,16 @@ module.exports = function(app, passport) {
                 next(err);
             }
             else {
-                res.render('faq.ejs', {
-                    user: req.user,
-                    faqs: faqs
+                Category.find({}, function(err2, categories) {
+                    if(err2)
+                        next(err2);
+                    else {
+                        res.render('faq.ejs', {
+                            user : req.user,
+                            faqs: faqs,
+                            categories: categories
+                        });
+                    }
                 });
             }
         });
@@ -156,10 +169,16 @@ module.exports = function(app, passport) {
             if(err)
                 next(err)
             else {
-                console.log(clas);
-                res.render('classDetail.ejs', {
-                    user : req.user,
-                    clas : clas
+                Category.find({}, function(err2, categories) {
+                    if(err2)
+                        next(err2);
+                    else {
+                        res.render('classDetail.ejs', {
+                            user : req.user,
+                            clas : clas,
+                            categories: categories
+                        });
+                    }
                 });
             }
         });
@@ -171,7 +190,6 @@ module.exports = function(app, passport) {
             if(err)
                 next(err);
             else {
-                console.log(recommends);
                 res.render('recommend.ejs', {
                     user : req.user,
                     recommends: recommends

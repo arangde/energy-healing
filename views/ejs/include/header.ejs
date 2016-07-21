@@ -8,16 +8,9 @@
           <a href="/classList" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CLASSES <span class="caret"></span></a>
           <ul class="dropdown-menu row">
             <li class="col-sm-12"><a href="/classList">All Classes</a></li>
-            <li class="col-sm-6"><a href="/classList">Meridian Energy</a></li>
-            <li class="col-sm-6"><a href="/classList">Chi Exercises</a></li>
-            <li class="col-sm-6"><a href="/classList">Heart Based Healing</a></li>
-            <li class="col-sm-6"><a href="/classList">Grounding & Protection</a></li>
-            <li class="col-sm-6"><a href="/classList">Vibration & the Breath</a></li>
-            <li class="col-sm-6"><a href="/classList">Healing With Elements</a></li>
-            <li class="col-sm-6"><a href="/classList">Symbols & Connections</a></li>
-            <li class="col-sm-6"><a href="/classList">Feminine Healing</a></li>
-            <li class="col-sm-6"><a href="/classList">Meditations</a></li>
-            <li class="col-sm-6"><a href="/classList">Fireside Chats</a></li>
+            <% categories.forEach(function(category, i) { %>
+              <li class="col-sm-6"><a href="/classList/<%= category._id.toString() %>/<%= encodeURIComponent(category.name) %>"><%= category.name %></a></li>
+            <% }); %>
           </ul>
         </li>
         <li class="odd"><a href="/healerList">HEALERS</a></li>
