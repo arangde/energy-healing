@@ -1,0 +1,38 @@
+<header class="header navbar">
+  <div class="container wider">
+    <div class="navbar-collapse">
+      <ul class="nav navbar-nav nav-rclickable">
+        <li class="odd"><a href="/">WELCOME</a></li>
+        <li class="even mobile-show"><a href="/classList">CLASSES</a></li>
+        <li class="even mobile-hide dropdown">
+          <a href="/classList" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CLASSES <span class="caret"></span></a>
+          <ul class="dropdown-menu row">
+            <li class="col-sm-12"><a href="/classList">All Classes</a></li>
+            <li class="col-sm-6"><a href="/classList">Meridian Energy</a></li>
+            <li class="col-sm-6"><a href="/classList">Chi Exercises</a></li>
+            <li class="col-sm-6"><a href="/classList">Heart Based Healing</a></li>
+            <li class="col-sm-6"><a href="/classList">Grounding & Protection</a></li>
+            <li class="col-sm-6"><a href="/classList">Vibration & the Breath</a></li>
+            <li class="col-sm-6"><a href="/classList">Healing With Elements</a></li>
+            <li class="col-sm-6"><a href="/classList">Symbols & Connections</a></li>
+            <li class="col-sm-6"><a href="/classList">Feminine Healing</a></li>
+            <li class="col-sm-6"><a href="/classList">Meditations</a></li>
+            <li class="col-sm-6"><a href="/classList">Fireside Chats</a></li>
+          </ul>
+        </li>
+        <li class="odd"><a href="/healerList">HEALERS</a></li>
+        <li class="even"><a href="/faq">FAQs</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <% if (user && user.email) { %>
+            <!--<strong><%= user.email %></strong>-->
+            <a href="/logout">SIGN OUT</a>
+          <% } else { %>
+            <a href="/login">Login</a>
+          <% } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
